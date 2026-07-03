@@ -1,49 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   FraudShield AI — Design Tokens
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* spotlight pointer (updated by Spotlight component) */
+  --mx: 50%;
+  --my: 0%;
+
+  color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-925 text-ink-200 font-sans antialiased;
+    font-feature-settings: "ss01", "cv01", "cv11";
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.32);
+    color: #fff;
+  }
+
+  /* refined scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.4), rgba(34, 211, 238, 0.3));
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.7), rgba(34, 211, 238, 0.5));
+    background-clip: padding-box;
+  }
+
+  /* tighter, balanced headings */
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
   }
 }
 
-html {
-  height: 100%;
+/* ============================================================
+   Component recipes — the shared glass/glow visual language
+   ============================================================ */
+@layer components {
+  /* Frosted glass surface — the universal panel */
+  .glass {
+    @apply relative bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] shadow-glass;
+  }
+  .glass-strong {
+    @apply relative bg-white/[0.055] backdrop-blur-2xl border border-white/[0.10] shadow-glass-lg;
+  }
+  .glass-panel {
+    @apply glass rounded-3xl;
+  }
+
+  /* subtle top highlight for elevated glass cards */
+  .glass-highlight::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  }
+
+  /* Animated gradient border (mask trick) */
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.6), rgba(34, 211, 238, 0.35), rgba(99, 102, 241, 0.5));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Pill / chip */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-label text-ink-300 backdrop-blur-md;
+  }
+
+  /* Section shell */
+  .shell {
+    @apply mx-auto w-full max-w-shell px-gutter;
+  }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* ============================================================
+   Utilities
+   ============================================================ */
+@layer utilities {
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-text-gradient bg-clip-text text-transparent;
+  }
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #93c5fd 0%, #3b82f6 50%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-danger {
+    background: linear-gradient(135deg, #fca5a5, #ef4444 60%, #f59e0b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Glow text shadow */
+  .text-glow {
+    text-shadow: 0 0 28px rgba(59, 130, 246, 0.45);
+  }
+
+  /* Grid background helper */
+  .bg-grid {
+    background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  /* Radial mask fade to transparent edges */
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, #000 50%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 35%, #000 50%, transparent 100%);
+  }
+  .mask-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  }
+  .mask-t {
+    -webkit-mask-image: linear-gradient(to top, #000 70%, transparent);
+    mask-image: linear-gradient(to top, #000 70%, transparent);
+  }
+
+  /* Shimmer skeleton */
+  .shimmer {
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.04) 25%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.04) 75%);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+
+  /* Number / data styling */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  .perspective {
+    perspective: 1400px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

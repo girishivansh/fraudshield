@@ -1,66 +1,37 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { SceneBackground } from "@/components/backgrounds/scene";
+import { Navbar } from "@/components/marketing/navbar";
+import { Hero } from "@/components/marketing/hero";
+import { Personalized } from "@/components/marketing/personalized";
+import { Workspace } from "@/components/marketing/workspace";
+import { LogoCloud } from "@/components/marketing/logo-cloud";
+import { Features } from "@/components/marketing/features";
+import { AICapabilities } from "@/components/marketing/ai-capabilities";
+import { ThreatIntel } from "@/components/marketing/threat-intel";
+import { FraudStats } from "@/components/marketing/fraud-stats";
+import { Testimonials } from "@/components/marketing/testimonials";
+import { FAQ } from "@/components/marketing/faq";
+import { CTA } from "@/components/marketing/cta";
+import { Footer } from "@/components/marketing/footer";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <SceneBackground variant="marketing" />
+      <Navbar />
+      <main className="relative">
+        <Hero />
+        <Personalized />
+        <Workspace />
+        <LogoCloud />
+        <Features />
+        <AICapabilities />
+        <ThreatIntel />
+        <FraudStats />
+        <Testimonials />
+        <FAQ />
+        <CTA />
       </main>
-    </div>
+      <Footer />
+    </>
   );
 }
