@@ -76,7 +76,7 @@ const config: Config = {
           200: "#E2E8F0",
         },
         // semantic
-        background: "#030712",
+        background: "#000000",
         surface: "rgba(255,255,255,0.025)",
         "surface-2": "rgba(255,255,255,0.04)",
         hairline: "rgba(255,255,255,0.08)",
@@ -139,7 +139,7 @@ const config: Config = {
         "primary-gradient-soft": "linear-gradient(135deg, rgba(96,165,250,0.18), rgba(34,211,238,0.12))",
         "risk-gradient": "linear-gradient(90deg, #10B981 0%, #F59E0B 55%, #EF4444 100%)",
         "aurora": "radial-gradient(60% 80% at 20% 10%, rgba(59,130,246,0.28), transparent 60%), radial-gradient(50% 70% at 85% 20%, rgba(34,211,238,0.22), transparent 55%), radial-gradient(55% 75% at 60% 100%, rgba(99,102,241,0.18), transparent 60%)",
-        "mesh": "radial-gradient(at 0% 0%, rgba(59,130,246,0.22) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(34,211,238,0.18) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(99,102,241,0.16) 0px, transparent 50%), radial-gradient(at 0% 100%, rgba(14,165,233,0.14) 0px, transparent 50%)",
+        "mesh": "radial-gradient(at 0% 0%, transparent 0px, transparent 50%), radial-gradient(at 100% 0%, transparent 0px, transparent 50%), radial-gradient(at 100% 100%, transparent 0px, transparent 50%), radial-gradient(at 0% 100%, transparent 0px, transparent 50%)",
         "spotlight": "radial-gradient(640px circle at var(--mx,50%) var(--my,0%), rgba(59,130,246,0.12), transparent 65%)",
         "grid": "linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px)",
         "grid-fade": "linear-gradient(rgba(148,163,184,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.07) 1px, transparent 1px)",

@@ -40,7 +40,7 @@ type Phase = "idle" | "analyzing" | "done";
 
 export default function ScamAnalyzerPage() {
   const { requireAuth, addAnalysis } = useAuth();
-  const [text, setText] = useState(SCAM_SAMPLE);
+  const [text, setText] = useState("");
   const [channel, setChannel] = useState("email");
   const [phase, setPhase] = useState<Phase>("idle");
   const [result, setResult] = useState<ClientAnalysis | null>(null);
@@ -99,6 +99,7 @@ export default function ScamAnalyzerPage() {
               <span className="text-body-sm font-semibold text-ink-100">Content to analyze</span>
             </div>
             <Select
+              aria-label="Communication channel"
               value={channel}
               onChange={(e) => setChannel(e.target.value)}
               options={[
@@ -113,9 +114,11 @@ export default function ScamAnalyzerPage() {
 
           <div className="relative">
             <Textarea
+              aria-label="Content to analyze"
               value={text}
               onChange={(e) => setText(e.target.value)}
               rows={10}
+              placeholder="Paste the full email, SMS, chat message, or URL here — including sender details and any links…"
               className="min-h-[240px] resize-none font-mono text-body-sm leading-relaxed"
             />
             {/* scanning overlay */}

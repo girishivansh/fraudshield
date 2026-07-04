@@ -8,7 +8,7 @@ type Point = (typeof TREND_24H)[number];
 function ChartTooltip({ active, payload, label }: { active?: boolean; payload?: { name: string; value: number; color: string }[]; label?: string }) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="rounded-xl border border-white/10 bg-ink-850/95 px-3 py-2 shadow-glass backdrop-blur-xl">
+    <div className="rounded-xl border border-white/10 bg-black/95 px-3 py-2 shadow-glass backdrop-blur-xl">
       <div className="mb-1 text-micro text-ink-500">{label}</div>
       {payload.map((p) => (
         <div key={p.name} className="flex items-center gap-2 text-label">

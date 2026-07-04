@@ -18,10 +18,7 @@ export function FraudStats() {
     <section className="relative py-section">
       <div className="shell">
         <Reveal>
-          <div className="relative overflow-hidden rounded-4xl border border-white/[0.08] bg-gradient-to-br from-primary-600/20 via-ink-900/40 to-accent-600/10 p-8 sm:p-12">
-            {/* glow accents */}
-            <div className="pointer-events-none absolute -left-20 -top-20 h-72 w-72 rounded-full bg-primary-500/20 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -right-10 h-72 w-72 rounded-full bg-accent-500/15 blur-3xl" />
+          <div className="relative overflow-hidden rounded-4xl border border-white/[0.08] glass glass-highlight p-8 sm:p-12">
 
             <div className="relative max-w-2xl">
               <h2 className="text-display-sm font-semibold text-ink-50">

@@ -1,17 +1,19 @@
+import dynamic from "next/dynamic";
 import { SceneBackground } from "@/components/backgrounds/scene";
 import { Navbar } from "@/components/marketing/navbar";
 import { Hero } from "@/components/marketing/hero";
-import { Personalized } from "@/components/marketing/personalized";
-import { Workspace } from "@/components/marketing/workspace";
-import { LogoCloud } from "@/components/marketing/logo-cloud";
-import { Features } from "@/components/marketing/features";
-import { AICapabilities } from "@/components/marketing/ai-capabilities";
-import { ThreatIntel } from "@/components/marketing/threat-intel";
-import { FraudStats } from "@/components/marketing/fraud-stats";
-import { Testimonials } from "@/components/marketing/testimonials";
-import { FAQ } from "@/components/marketing/faq";
-import { CTA } from "@/components/marketing/cta";
-import { Footer } from "@/components/marketing/footer";
+
+const Personalized = dynamic(() => import("@/components/marketing/personalized").then(mod => mod.Personalized));
+const Workspace = dynamic(() => import("@/components/marketing/workspace").then(mod => mod.Workspace));
+const LogoCloud = dynamic(() => import("@/components/marketing/logo-cloud").then(mod => mod.LogoCloud));
+const Features = dynamic(() => import("@/components/marketing/features").then(mod => mod.Features));
+const AICapabilities = dynamic(() => import("@/components/marketing/ai-capabilities").then(mod => mod.AICapabilities));
+const ThreatIntel = dynamic(() => import("@/components/marketing/threat-intel").then(mod => mod.ThreatIntel));
+const FraudStats = dynamic(() => import("@/components/marketing/fraud-stats").then(mod => mod.FraudStats));
+const Testimonials = dynamic(() => import("@/components/marketing/testimonials").then(mod => mod.Testimonials));
+const FAQ = dynamic(() => import("@/components/marketing/faq").then(mod => mod.FAQ));
+const CTA = dynamic(() => import("@/components/marketing/cta").then(mod => mod.CTA));
+const Footer = dynamic(() => import("@/components/marketing/footer").then(mod => mod.Footer));
 
 export default function Home() {
   return (

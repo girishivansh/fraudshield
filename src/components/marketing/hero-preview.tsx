@@ -38,8 +38,7 @@ export function HeroPreview() {
 
   return (
     <div className="perspective relative mx-auto w-full max-w-5xl">
-      {/* glow behind */}
-      <div className="absolute inset-x-10 -top-6 bottom-0 -z-10 rounded-[2.5rem] bg-primary-500/20 blur-[80px]" />
+      {/* no glow — pure black background */}
 
       <motion.div
         initial={{ opacity: 0, y: 60, rotateX: 12 }}

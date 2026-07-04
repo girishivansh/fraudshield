@@ -21,7 +21,7 @@ export function Topbar({
   const { user, isAuthenticated, openAuth } = useAuth();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-ink-925/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-black/70 backdrop-blur-xl">
       <div className="flex h-16 items-center gap-3 px-4 sm:px-6">
         <button
           onClick={onOpenMobile}

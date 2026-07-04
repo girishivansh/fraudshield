@@ -35,7 +35,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
       <motion.aside
         animate={{ width: collapsed ? 80 : 264 }}
         transition={{ type: "spring", stiffness: 300, damping: 32 }}
-        className="fixed inset-y-0 left-0 z-40 hidden border-r border-white/[0.06] bg-ink-900/60 backdrop-blur-2xl lg:block"
+        className="fixed inset-y-0 left-0 z-40 hidden border-r border-white/[0.06] bg-black/60 backdrop-blur-2xl lg:block"
       >
         <Sidebar collapsed={collapsed} onToggle={() => setCollapsed((v) => !v)} />
       </motion.aside>
@@ -49,7 +49,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="absolute inset-0 bg-ink-950/70 backdrop-blur-md"
+              className="absolute inset-0 bg-black/70 backdrop-blur-md"
             />
             <motion.aside
               initial={{ x: "-100%" }}

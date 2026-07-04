@@ -18,43 +18,37 @@ const trust = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden pb-20 pt-32 sm:pt-40">
-      {/* focused radial glow behind headline */}
-      <div className="pointer-events-none absolute left-1/2 top-24 -z-10 h-[420px] w-[820px] max-w-[95vw] -translate-x-1/2 rounded-full bg-primary-500/15 blur-[120px]" />
+      {/* no background glow — pure black */}
 
       <div className="shell">
-        <motion.div
-          variants={staggerContainer(0.12, 0.1)}
-          initial="hidden"
-          animate="show"
+        <div
           className="mx-auto max-w-4xl text-center"
         >
-          <motion.div variants={fadeUp} className="flex justify-center">
+          <div className="flex justify-center">
             <span className="chip gap-2 border-primary-400/20 bg-primary-500/[0.07]">
               <Sparkles className="h-3.5 w-3.5 text-accent-300" />
               <span className="text-label text-ink-200">Next-gen AI fraud intelligence</span>
               <span className="mx-1 h-3 w-px bg-white/15" />
               <span className="text-label text-accent-300">v4.2 live</span>
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            variants={fadeUp}
+          <h1
             className="mt-6 text-display-xl font-bold tracking-tight text-ink-50 sm:text-display-2xl"
           >
             Detect fraud
             <br />
             <span className="text-gradient-primary text-glow">before it strikes.</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={fadeUp}
+          <p
             className="mx-auto mt-6 max-w-2xl text-body-lg text-ink-400"
           >
             FraudShield AI is the intelligence command center that detects scams, voice clones,
             and fraud rings in milliseconds — then prevents the loss before it ever happens.
-          </motion.p>
+          </p>
 
-          <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/register">
               <Button size="xl" className="group">
                 <ShieldCheck className="h-5 w-5" />
@@ -68,12 +62,12 @@ export function Hero() {
                 Explore the platform
               </Button>
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.p variants={fadeUp} className="mt-4 text-micro text-ink-500">
+          <p className="mt-4 text-micro text-ink-500">
             No credit card required · SOC 2 Type II · GDPR &amp; PSD2 ready
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* product preview */}
         <div className="mt-16">
@@ -89,7 +83,7 @@ export function Hero() {
           className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] sm:grid-cols-4"
         >
           {trust.map((t) => (
-            <motion.div key={t.label} variants={fadeUp} className="bg-ink-925/40 p-6 text-center backdrop-blur-sm">
+            <motion.div key={t.label} variants={fadeUp} className="bg-black/40 p-6 text-center backdrop-blur-sm">
               <div className="tabular text-display-sm font-bold text-gradient-primary">
                 <Counter to={t.to} prefix={t.prefix} suffix={t.suffix} decimals={t.decimals} />
               </div>

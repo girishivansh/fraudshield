@@ -180,13 +180,22 @@ function DashboardContent() {
                         </div>
                         <p className="truncate text-micro text-ink-500 mt-0.5">{r.preview}</p>
                       </div>
-                      <div className="hidden shrink-0 flex-col items-end sm:flex mr-4">
-                        <span className="text-micro font-medium text-ink-300">Confidence</span>
-                        <span className="text-micro text-ink-500">{Math.round(r.confidence * 100)}%</span>
+                      <div className="hidden shrink-0 items-center gap-4 sm:flex">
+                        <div className="flex flex-col items-end">
+                          <span className="text-micro font-medium text-ink-300">Confidence</span>
+                          <span className="text-micro text-ink-500">{Math.round(r.confidence * 100)}%</span>
+                        </div>
+                        <span className="shrink-0 text-micro text-ink-500">{timeAgo(r.createdAt)}</span>
+                        <span
+                          className="tabular shrink-0 rounded-lg px-2 py-1 text-micro font-semibold"
+                          style={{ color: meta.color, boxShadow: `inset 0 0 0 1px ${meta.color}33` }}
+                        >
+                          {r.score}
+                        </span>
                       </div>
-                      <span className="hidden shrink-0 text-micro text-ink-500 sm:block mr-4">{timeAgo(r.createdAt)}</span>
+                      {/* mobile score only */}
                       <span
-                        className="tabular shrink-0 rounded-lg px-2 py-1 text-micro font-semibold"
+                        className="tabular shrink-0 rounded-lg px-2 py-1 text-micro font-semibold sm:hidden"
                         style={{ color: meta.color, boxShadow: `inset 0 0 0 1px ${meta.color}33` }}
                       >
                         {r.score}

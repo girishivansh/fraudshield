@@ -58,18 +58,20 @@ export function Footer() {
             <form className="mt-5 flex max-w-xs items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] p-1.5">
               <input
                 type="email"
+                aria-label="Work email"
                 placeholder="Work email"
                 className="h-9 flex-1 bg-transparent px-2.5 text-body-sm text-ink-100 placeholder:text-ink-500 outline-none"
               />
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-gradient text-white shadow-glow transition-transform hover:scale-105">
+              <button aria-label="Subscribe to newsletter" className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-gradient text-white shadow-glow transition-transform hover:scale-105">
                 <ArrowRight className="h-4 w-4" />
               </button>
             </form>
             <div className="mt-5 flex gap-2">
-              {[AtSign, Globe, MessageCircle].map((Icon, i) => (
+              {[{ Icon: AtSign, label: "Twitter" }, { Icon: Globe, label: "Website" }, { Icon: MessageCircle, label: "Discord" }].map(({ Icon, label }, i) => (
                 <a
                   key={i}
                   href="#"
+                  aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-ink-400 transition-colors hover:border-primary-400/40 hover:text-white"
                 >
                   <Icon className="h-4 w-4" />

@@ -11,10 +11,10 @@ export function CTA() {
     <section className="relative py-section">
       <div className="shell">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/[0.08] bg-gradient-to-br from-ink-900/60 to-ink-850/40 px-6 py-16 text-center sm:px-12 sm:py-24">
+          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/[0.08] bg-black px-6 py-16 text-center sm:px-12 sm:py-24">
             {/* effects */}
             <div className="pointer-events-none absolute inset-0 bg-mesh opacity-60" />
-            <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-primary-500/25 blur-[100px]" />
+
             <ScanLine />
 
             <div className="relative mx-auto max-w-2xl">
