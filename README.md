@@ -315,10 +315,7 @@ sequenceDiagram
 
 <br />
 
-## 🎬 Demo
 
-> [!TIP]
-> **Try these live in the Scam Analyzer** to watch the hybrid engine light up in real time.
 
 <table>
 <tr><th>Paste this</th><th>Expected verdict</th></tr>
@@ -937,7 +934,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy…
 
 <div align="center">
 
-<img src="./public/screenshots/hero-new.png" alt="FraudShield AI" width="120" />
+<img src="./public/screenshots/hero.png" alt="FraudShield AI" width="120" />
 
 ### 🛡️ FraudShield AI
 
