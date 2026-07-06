@@ -6,8 +6,6 @@
 
 <br />
 
-<!-- LOGO -->
-
 
 <br />
 <br />
@@ -299,20 +297,19 @@ sequenceDiagram
 <div align="center">
 
 ### Landing / Hero
-<img src="./public/screenshots/hero.png" alt="FraudShield AI landing page" width="90%" />
+<img src="./public/screenshots/hero-new.png" alt="FraudShield AI landing page" width="90%" />
 
-### Intelligence Dashboard
-<img src="./public/screenshots/dashboard.png" alt="Dashboard with threat intelligence" width="90%" />
+### AI Engine Dashboard
+<img src="./public/screenshots/dashboard-new.png" alt="AI Engine Dashboard" width="90%" />
 
-### Scam Analyzer — Explainable Verdict
-<img src="./public/screenshots/analysis.png" alt="Analysis result with signal breakdown" width="90%" />
+### History & Intelligence Center
+<img src="./public/screenshots/history-new.png" alt="History & Intelligence Center" width="90%" />
 
-<table>
-<tr>
-<td width="50%"><img src="./public/screenshots/profile.png" alt="Analyst profile" /></td>
-<td width="50%"><img src="./public/screenshots/extra.png" alt="Additional workspace view" /></td>
-</tr>
-</table>
+### Fraud Activity Trend
+<img src="./public/screenshots/trend-new.png" alt="Fraud Activity Trend" width="90%" />
+
+### Scam Analyzer Workspace
+<img src="./public/screenshots/analyzer-new.png" alt="Scam Analyzer Workspace" width="90%" />
 
 </div>
 
@@ -940,7 +937,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy…
 
 <div align="center">
 
-<img src="./public/screenshots/hero.png" alt="FraudShield AI" width="120" />
+<img src="./public/screenshots/hero-new.png" alt="FraudShield AI" width="120" />
 
 ### 🛡️ FraudShield AI
 
