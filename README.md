@@ -7,7 +7,7 @@
 <br />
 
 <!-- LOGO -->
-<img src="./public/screenshots/hero.png" alt="FraudShield AI" width="820" />
+
 
 <br />
 <br />
