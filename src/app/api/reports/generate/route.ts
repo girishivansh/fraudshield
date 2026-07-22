@@ -3,7 +3,7 @@ import { connectDB } from "@/lib/db";
 import { Analysis } from "@/models/Analysis";
 import { Report } from "@/models/Report";
 import { requireUser } from "@/lib/auth";
-import { generateInvestigationReport } from "@/lib/ai/claude";
+import { generateInvestigationReport } from "@/lib/ai/groq";
 import { generateReportPdf } from "@/lib/pdf";
 import { uploadBuffer } from "@/lib/cloudinary";
 import { reportSchema } from "@/lib/validation";

@@ -1,5 +1,5 @@
 import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFPage } from "pdf-lib";
-import type { InvestigationReport } from "./ai/claude";
+import type { InvestigationReport } from "./ai/groq";
 
 /* Generate a downloadable investigation-report PDF with pdf-lib. */
 

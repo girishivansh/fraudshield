@@ -4,7 +4,7 @@ import { Report } from "@/models/Report";
 import { requireUser } from "@/lib/auth";
 import { generateReportPdf } from "@/lib/pdf";
 import { handleError, notFound } from "@/lib/api";
-import type { InvestigationReport } from "@/lib/ai/claude";
+import type { InvestigationReport } from "@/lib/ai/groq";
 
 export const runtime = "nodejs";
 

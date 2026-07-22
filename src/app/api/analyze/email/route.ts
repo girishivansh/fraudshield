@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 import { connectDB } from "@/lib/db";
 import { Analysis } from "@/models/Analysis";
 import { requireUser } from "@/lib/auth";
-import { analyzeEmail } from "@/lib/ai/claude";
+import { analyzeEmail } from "@/lib/ai/groq";
 import { runRuleEngine } from "@/lib/ai/rule-engine";
 import { emailSchema, sanitize } from "@/lib/validation";
 import { serializeAnalysis } from "@/lib/serialize";
